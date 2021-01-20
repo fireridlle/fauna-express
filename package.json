@@ -1,10 +1,10 @@
 {
-  "name": "netlify-express",
+  "name": "fauna-express",
   "version": "0.0.1",
-  "description": "Example of how to deploy a Express.js Netlify app.",
-  "main": "functions/server.js",
+  "description": "Example of how to deploy a Express.js Fauna app.",
+  "main": "functions/index.js",
   "scripts": {
-    "build": "netlify-lambda build express",
+    "build:netlify": "netlify-lambda build api",
     "start": "nodemon server-local.js"
   },
   "repository": {

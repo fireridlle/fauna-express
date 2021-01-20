@@ -11,11 +11,11 @@ router.get('/', (req, res) => {
   res.write('<h1>Hello from Express.js!</h1>');
   res.end();
 });
-router.get('/another', (req, res) => res.json({ route: req.originalUrl }));
-router.post('/', (req, res) => res.json({ postBody: req.body }));
+router.get('/env', (req, res) => res.json(process.env));
 
 app.use(bodyParser.json());
-app.use('/.netlify/functions/server', router);  // path must route to lambda
+app.use('/api', router)
+app.use('/.netlify/functions/server', router);  // netlify
 app.use('/', (req, res) => res.sendFile(path.join(__dirname, '../index.html')));
 
 module.exports = app;
