@@ -5,7 +5,7 @@
   "main": "functions/index.js",
   "scripts": {
     "build:netlify": "netlify-lambda build api",
-    "start": "nodemon server-local.js"
+    "start": "node server-local.js"
   },
   "repository": {
     "type": "git",
