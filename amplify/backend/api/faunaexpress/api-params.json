@@ -1,0 +1,35 @@
+{
+    "paths": [
+        {
+            "name": "/env",
+            "lambdaFunction": "faunaenv",
+            "privacy": {
+                "open": true
+            },
+            "policyResourceName": "/env"
+        }
+    ],
+    "resourceName": "faunaexpress",
+    "apiName": "faunaexpress",
+    "functionArns": [
+        {
+            "lambdaFunction": "faunaenv"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "amplify-faunaback-staging-110424-authRole",
+        "unAuthRoleName": "amplify-faunaback-staging-110424-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "faunaenv",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-faunaback-staging-110424-authRole",
+      "UnauthRoleArn": "arn:aws:iam::136625954510:role/amplify-faunaback-staging-110424-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::136625954510:role/amplify-faunaback-staging-110424-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-faunaback-staging-110424-deployment",
+      "UnauthRoleName": "amplify-faunaback-staging-110424-unauthRole",
+      "StackName": "amplify-faunaback-staging-110424",
+      "StackId": "arn:aws:cloudformation:us-east-1:136625954510:stack/amplify-faunaback-staging-110424/6c370220-5bd8-11eb-af3c-12c9c271ca70",
+      "AmplifyAppId": "d3j06ghhru4y3d"
+    }
+  }
+}
