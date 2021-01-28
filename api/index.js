@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
   res.write('<h1>Hello from Express.js!</h1>');
   res.end();
 });
-router.get('/fauna', async (req, res) => getUser().then(user => res.send(user)).catch(error => res.status(500).send(error)))
+router.get('/fauna', async (_, res) => getUser().then(user => res.send(user)).catch(error => res.status(500).send(error)))
 router.get('/env', (_, res) => {
 
   res.json({
