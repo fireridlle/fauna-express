@@ -6,7 +6,7 @@ const path = require('path');
 const serverless = require('serverless-http');
 const app = express();
 const bodyParser = require('body-parser');
-const { getUser } = require('../fauna');
+const { getUser, startStream } = require('../fauna');
 
 const router = express.Router();
 router.get('/', (req, res) => {
@@ -15,6 +15,9 @@ router.get('/', (req, res) => {
   res.end();
 });
 router.get('/fauna', async (_, res) => getUser().then(user => res.send(user)).catch(error => res.status(500).send(error)))
+router.get('/debug-fauna-stream', async (_, res) => {
+  startStream()
+})
 router.get('/env', (_, res) => {
 
   res.json({
