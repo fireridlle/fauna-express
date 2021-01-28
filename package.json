@@ -25,7 +25,7 @@
     "body-parser": "^1.19.0",
     "encoding": "^0.1.13",
     "express": "^4.17.1",
-    "faunadb": "git://github.com/fireridlle/faunadb-js.git#feature/drv-356_recognize_runtime_env",
+    "faunadb": "^4.0.0",
     "node-fetch": "^2.6.1",
     "serverless-http": "^2.3.0"
   },
