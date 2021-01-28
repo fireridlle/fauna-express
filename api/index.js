@@ -1,5 +1,6 @@
 'use strict';
 const express = require('express');
+const os = require('os')
 const fetch = require('node-fetch');
 const path = require('path');
 const serverless = require('serverless-http');
@@ -18,7 +19,7 @@ router.get('/env', (req, res) => {
 
   res.json({
     ...process.env,
-    version: require('os').version(),
+    version: os.version(),
     platform: os.platform()
   })
 });
