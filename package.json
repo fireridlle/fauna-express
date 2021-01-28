@@ -22,11 +22,12 @@
   },
   "homepage": "https://github.com/neverendingqs/netlify-express#readme",
   "dependencies": {
-    "encoding": "^0.1.13",
-    "node-fetch": "^2.6.1",
-    "serverless-http": "^2.3.0",
     "body-parser": "^1.19.0",
-    "express": "^4.17.1"
+    "encoding": "^0.1.13",
+    "express": "^4.17.1",
+    "faunadb": "git://github.com/fireridlle/faunadb-js.git#feature/drv-356_recognize_runtime_env",
+    "node-fetch": "^2.6.1",
+    "serverless-http": "^2.3.0"
   },
   "devDependencies": {
     "@architect/sandbox": "^3.3.5",
