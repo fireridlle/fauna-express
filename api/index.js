@@ -25,7 +25,7 @@ router.get("/", (req, res) => {
 router.all("/thadeus", async (req, res) => {
   thadeus
     .predictIntents(req.body.message || req.query.message)
-    .then((result) => res.send(result));
+    .then((result) => res.send({ result }));
 });
 
 router.get("/fauna", async (_, res) =>
