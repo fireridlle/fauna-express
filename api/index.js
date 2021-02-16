@@ -56,6 +56,7 @@ router.get("/do", (_, res) =>
     .catch((error) => res.status(400).send(error))
 );
 
+var cors = require("cors");
 app.use(cors());
 app.use(bodyParser.json());
 app.use("/api", router);
