@@ -22,7 +22,7 @@ router.get("/", (req, res) => {
   res.end();
 });
 
-router.all("/thadeus", async (req, res) => {
+router.all("/thadeus", bodyParser.json(), async (req, res) => {
   console.info(req.body);
   thadeus
     .predictIntents(req.body.message || req.query.message)
@@ -69,3 +69,4 @@ app.use("/.netlify/functions/index", router); // netlify
 
 module.exports = app;
 module.exports.handler = serverless(app);
+// app.listen(3030, () => console.log(`App is running on port`));
