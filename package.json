@@ -5,7 +5,8 @@
   "main": "functions/index.js",
   "scripts": {
     "build:netlify": "netlify-lambda build api",
-    "start": "node server-local.js"
+    "start": "node server-local.js",
+    "tsc": "tsc"
   },
   "repository": {
     "type": "git",
@@ -25,13 +26,15 @@
     "body-parser": "^1.19.0",
     "encoding": "^0.1.13",
     "express": "^4.17.1",
-    "faunadb": "git://github.com/fireridlle/faunadb-js.git#feature/drv-356_recognize_runtime_env",
+    "faunadb": "^3.0.1",
     "node-fetch": "^2.6.1",
-    "serverless-http": "^2.3.0"
+    "serverless-http": "^2.3.0",
+    "thadeus": "^1.0.2"
   },
   "devDependencies": {
     "@architect/sandbox": "^3.3.5",
     "netlify-lambda": "^1.6.3",
-    "nodemon": "^1.19.2"
+    "nodemon": "^1.19.2",
+    "typescript": "^3.8.3"
   }
 }
