@@ -23,6 +23,7 @@ router.get("/", (req, res) => {
 });
 
 router.all("/thadeus", async (req, res) => {
+  console.info(req.body);
   thadeus
     .predictIntents(req.body.message || req.query.message)
     .then((result) => res.send({ result }));
