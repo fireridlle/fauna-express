@@ -59,7 +59,11 @@ router.get("/do", (_, res) =>
 
 var cors = require("cors");
 app.use(cors());
-app.use(bodyParser);
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// parse application/json
+app.use(bodyParser.json());
 app.use("/api", router);
 app.use("/.netlify/functions/index", router); // netlify
 
