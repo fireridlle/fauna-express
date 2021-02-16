@@ -12,7 +12,7 @@ const apiSecret =
   "0de30bfc9c8dc4d6f75ebb13afc2c9843337f463ff9ef83d09275189485b2a1e";
 const apiKey = "dc4bc6c4-fdcb-4986-a94e-b0f6caa2f884";
 const workspaceId = "601d4676dfbe980014c372a7";
-
+const { Thadeus } = require("thadeus");
 const thadeus = new Thadeus({ apiSecret, apiKey, workspaceId });
 
 const router = express.Router();
@@ -56,6 +56,7 @@ router.get("/do", (_, res) =>
     .catch((error) => res.status(400).send(error))
 );
 
+app.use(cors());
 app.use(bodyParser.json());
 app.use("/api", router);
 app.use("/.netlify/functions/index", router); // netlify
