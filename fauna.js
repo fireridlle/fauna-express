@@ -33,11 +33,14 @@ function runStream(docRef) {
       console.debug(`subscribed to Fauna events for `, docRef);
     })
     .on("error", (data, event) => {
-      console.debug(
-        "stream",
-        docRef,
-        JSON.stringify(data),
-        JSON.stringify(event)
+      console.log("Error:", data);
+      console.log(
+        "Error details:",
+        JSON.stringify({
+          ...data,
+          message: data.message,
+          stack: data.stack,
+        })
       );
       if (data.message == "network error") {
         console.debug("closing stream");
