@@ -23,10 +23,19 @@ router.get("/", (req, res) => {
 });
 
 router.all("/thadeus", bodyParser.json(), async (req, res) => {
-  console.info(req.body);
   thadeus
     .predictIntents(req.body.message || req.query.message)
     .then((result) => res.send({ result }));
+});
+
+router.all("/thadeus/example", bodyParser.json(), async (req, res) => {
+  thadeus
+    .updateIntent({
+      intentId: "601d69acdfbe980014c372a9",
+      examples: ["111", "2222", "333", "4444", "5555"],
+    })
+    .then((result) => res.send({ result }))
+    .catch((err) => res.send(err));
 });
 
 router.get("/fauna", async (_, res) =>
@@ -41,9 +50,6 @@ router.get("/fauna", async (_, res) =>
     })
 );
 router.get("/fauna-load", async (_, res) => load());
-router.get("/debug-fauna-stream", async (_, res) => {
-  startStream();
-});
 router.get("/env", (_, res) => {
   res.json({
     ...process.env,
@@ -68,5 +74,6 @@ app.use("/api", router);
 app.use("/.netlify/functions/index", router); // netlify
 
 module.exports = app;
-module.exports.handler = serverless(app);
-// app.listen(3030, () => console.log(`App is running on port`));
+// module.exports.handler = serverless(app);
+app.listen(3030, () => console.log(`App is running on port`));
+startStream();
