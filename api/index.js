@@ -31,7 +31,7 @@ router.all("/thadeus", bodyParser.json(), async (req, res) => {
 router.all("/thadeus/example", bodyParser.json(), async (req, res) => {
   thadeus
     .updateIntent({
-      intentId: "601d69acdfbe980014c372a9",
+      intentId: "601d69acdfbe980014c12372a9",
       examples: ["111", "2222", "333", "4444", "5555"],
     })
     .then((result) => res.send({ result }))
@@ -74,6 +74,6 @@ app.use("/api", router);
 app.use("/.netlify/functions/index", router); // netlify
 
 module.exports = app;
-// module.exports.handler = serverless(app);
+module.exports.handler = serverless(app);
 app.listen(3030, () => console.log(`App is running on port`));
-startStream();
+// startStream();
